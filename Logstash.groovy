@@ -21,7 +21,7 @@ def sendNotification(Map execution, Map config) {
 
   // Stream
   def json = new ObjectMapper()
-  socketStream << json.writeValueAsString(e2 + data) + "\n"
+  socketStream << json.writeValueAsString(e2) + "\n"
 }
 
 rundeckPlugin(NotificationPlugin) {
