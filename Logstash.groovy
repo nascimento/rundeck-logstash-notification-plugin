@@ -46,4 +46,9 @@ rundeckPlugin(NotificationPlugin) {
     sendNotification(executionData, configuration)
     true
   }
+  
+  onavgduration { Map executionData, Map configuration ->
+    sendNotification(executionData, configuration)
+    true
+  }
 }
