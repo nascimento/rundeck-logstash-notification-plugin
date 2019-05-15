@@ -17,7 +17,13 @@ def sendNotification(Map execution, Map config) {
 
   // Execution Information
   def e2 = [:]
-  execution.each{ e2["${it.key}"] = it.value }
+  execution.each{
+    if ("${it.key}" == "argstring" && it.value != null) {
+      e2["${it.key}"] = "${it.value}".replaceAll("\"", "'")
+    } else {
+      e2["${it.key}"] = it.value
+    }
+  }
 
   // Stream
   def json = new ObjectMapper()
