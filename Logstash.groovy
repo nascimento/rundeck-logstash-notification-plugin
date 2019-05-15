@@ -51,4 +51,9 @@ rundeckPlugin(NotificationPlugin) {
     sendNotification(executionData, configuration)
     true
   }
+
+  onretryablefailure { Map executionData, Map configuration ->
+    sendNotification(executionData, configuration)
+    true
+  }
 }
